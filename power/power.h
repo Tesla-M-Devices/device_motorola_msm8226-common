@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,8 +49,8 @@ static power_profile profiles[PROFILE_MAX] = {
         .io_is_busy = 0,
         .min_sample_time = 60000,
         .sampling_down_factor = 100000,
-        .target_loads = "95 1190400:99",
-        .target_loads_off = "95 1190400:99",
+        .target_loads = "95",
+        .target_loads_off = "95",
         .scaling_max_freq = 787200,
     },
     [PROFILE_BALANCED] = {
@@ -85,16 +85,18 @@ static power_profile profiles[PROFILE_MAX] = {
     },
     [PROFILE_BIAS_POWER_SAVE] = {
         .boost = 0,
-        .boostpulse_duration = 0,
+        .boostpulse_duration = 60000,
         .go_hispeed_load = 90,
         .go_hispeed_load_off = 90,
-        .hispeed_freq = 787200,
+        .hispeed_freq = 998400,
         .hispeed_freq_off = 787200,
-        .io_is_busy = 0,
+        .io_is_busy = 1,
         .min_sample_time = 60000,
         .sampling_down_factor = 100000,
-        .target_loads = "95 1190400:99",
-        .target_loads_off = "95 1190400:99",
+        .target_loads = "90",
+        .target_loads_off = "95",
         .scaling_max_freq = 1190400,
+        .scaling_min_freq = 300000,
+        .scaling_min_freq_off = 300000,
     },
 };
